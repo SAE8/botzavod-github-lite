@@ -1,0 +1,6 @@
+{
+    "TELEGRAM_BOT_TOKEN": "your_new_token_here",
+    "LOG_LEVEL": "INFO",
+    "MAX_USERS": 100,
+    "DEBUG_MODE": true
+}
