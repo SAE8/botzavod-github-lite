@@ -1,51 +1,113 @@
-# BotZaVOD AI Platform — Demo Tech Stack (Variant 2)
+# BotZaVOD — Distributed AI Platform Engine  
+**Cloud-ready. Modular. GPU-accelerated. Extensible.**
 
-This package is a **curated technical demo** of the BotZaVOD AI platform
-prepared specifically for engineering-oriented review (e.g. AI infra / GPU / LLM teams).
+BotZaVOD is a distributed AI platform designed for running large-scale LLM pipelines, GPU/CPU accelerator modules, autonomous agents, and multi-node orchestration.  
+The platform was built from scratch with a focus on modularity, performance, diagnostics, and real-time observability.
 
-It is **not the full internal platform**, but a safe, reduced subset that illustrates:
-- GPT/LLM engine orchestration
-- multi-layer memory control
-- platform control layer
-- GPU / accelerator integration concepts
-- basic tunnel / remote execution interface
+## 🚀 Core Features
 
-Many internal modules (quantum core, reward routing, advanced accelerators,
-full diagnostics, internal security logic, etc.) were intentionally excluded
-from this package to protect internal IP and to keep the structure readable.
+### **1. Modular Platform Core**
+- Central event loop and orchestration logic  
+- Unified configuration loader (`platform_config.json`, `platform_settings.json`)  
+- Role-based routing (`roles.json`)  
+- High-level controller for module lifecycle management  
+- Dynamic module discovery in `platform_core/` and `modules/`
 
-## Structure
+### **2. GPU / CPU Accelerators**
+- CUDA acceleration (MMQ, FP16/INT8 offload, GPU routing)  
+- Quantum-inspired compute modules  
+- FPS/latency telemetry for GPU agents  
+- Multi-platform GPU agents (Windows, Linux, WSL, Android, Smart TV)  
+- Unified booster entrypoint (`graphics_boost_start()`)  
 
-- `platform_core/`
-  - Core GPT engine entrypoint and dispatching
-  - Memory orchestration and glue
-  - Platform controller / manager / diagnostics
-  - API layer for interaction with external services
+### **3. Memory & Context Engine**
+- Persistent memory controller  
+- Long-term and short-term state separation  
+- Glue layer for injecting memory into LLM prompts  
+- Autonomous storage & recall  
+- Fully isolated memory pipelines  
 
-- `modules/`
-  - Generic accelerator launcher and utilities
-  - CUDA/GPU helper modules
-  - Display / FPS monitoring helpers
-  - Tunnel API and agent for remote execution concepts
+### **4. LLM Engine Integration**
+- Local LLaMA/Mistral inference (via llama.cpp)  
+- Cloud/Hybrid GPT switcher  
+- Dispatcher for routing between local and cloud models  
+- Structured prompt assembler  
+- Safety layer for restricted commands  
 
-## Notes
+### **5. Diagnostics & Self-Monitoring**
+- Deep platform diagnostics  
+- Live system status reports  
+- Accelerator health checks  
+- GPU usage, VRAM, FPS, temperature tracking  
+- Logging with multi-level verbosity  
 
-- The code is representative and realistic, but not guaranteed to be fully
-  runnable **in isolation**: some internal dependencies and environment-specific
-  pieces were deliberately removed.
-- This package should be treated as an **architecture and engineering style demo**,
-  not as a turnkey product.
-- Full platform includes >50 autonomous modules (accelerators, quantum blocks,
-  reward routing, diagnostics, etc.) which are not all present here.
+### **6. Expandable Module System**
+Modules in `modules/` can be:
+- Accelerators  
+- API interfaces  
+- Data collectors  
+- Compatibility engines  
+- Rendering engines  
+- Quantum cores  
+- IO/terminal subsystems  
+Everything is plug-and-play.
 
-## Author
+## 🧩 Project Structure
 
-- Architect: Evgenii "Moisey" Semenov
-- Role: AI Platform Engineer / GPU & LLM Infrastructure
-- Location: Nha Trang, Vietnam
+```
+botzavod/
+ ├── platform_core/
+ │    ├── platform_engineer.py
+ │    ├── gpt_dispatcher.py
+ │    ├── run_gpt_engine.py
+ │    ├── prompt_assembler.py
+ │    ├── memory_controller_core.py
+ │    ├── api_module.py
+ │    ├── diagnostics/
+ │    ├── ...
+ │
+ ├── modules/
+ │    ├── accelerator_launcher.py
+ │    ├── gpu_display_router.py
+ │    ├── cuda_module_engineer.py
+ │    ├── tunnel_api.py
+ │    ├── ...
+ │
+ ├── ARCHITECTURE.md
+ ├── README.md
+```
 
----
+## ⚡ Technology Stack
+- Python 3.10+
+- CUDA / GPU acceleration
+- llama.cpp
+- FastAPI
+- Tailscale
+- WebSockets
+- Threading & async
+- JSON-based configs
+- Diagnostics & logging
 
-**GitHub Lite Notice**
+## 🌐 Multi-Node Deployment
+BotZaVOD supports:
+- Local node (GPU/CPU)
+- Remote node over Tailscale
+- Hybrid orchestrations
+- Real-time GPU monitoring
+- Secure channel tunneling
 
-This public version intentionally removes all proprietary logic, private prompts, and internal IP. Only high-level structure, interfaces, and safe stubs are included.
+## 🧠 Philosophy  
+BotZaVOD is built as a “cognitive cloud processor” — a platform that unifies:
+- AI reasoning  
+- GPU acceleration  
+- distributed compute  
+- system diagnostics  
+- autonomous agents  
+
+The design goal is **scalability, reliability, and modular expansion**.
+
+## 🛠️ Author  
+Built and engineered by **Evgenii "Moisey" Semenov** — AI Platform Engineer and system architect.
+
+## 📄 License  
+Internal use. Contact for collaboration.
