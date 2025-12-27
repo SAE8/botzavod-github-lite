@@ -1,8 +1,21 @@
 # BotZaVOD — Distributed AI Platform Engine  
 **Cloud-ready. Modular. GPU-accelerated. Extensible.**
+## Executive Summary
 
-BotZaVOD is a distributed AI platform designed for running large-scale LLM pipelines, GPU/CPU accelerator modules, autonomous agents, and multi-node orchestration.  
-The platform was built from scratch with a focus on modularity, performance, diagnostics, and real-time observability.
+BotZaVOD is a foundational AI platform engine designed to orchestrate
+distributed GPU/CPU/LLM workloads across local and remote nodes.
+
+It serves as a universal, modular, and autonomous core for building
+scalable AI infrastructures rather than isolated applications.
+
+BotZaVOD can be used as:
+- an internal AI infrastructure layer
+- a distributed inference platform
+- a GPU / accelerator orchestration backend
+- a foundation for AI-as-a-Service and research-to-production systems
+
+The platform is built with scalability, observability,
+and modular expansion as first-class principles.
 
 ## 🚀 Core Features
 
